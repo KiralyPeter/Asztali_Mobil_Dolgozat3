@@ -9,20 +9,13 @@
 import java.util.Scanner;
 
 public class MainConsole {
-    /*
-     * A csoni objektum osztáj tagjává kellen tenni.
-     * Meg fontolandü a egy try() utasításba zárása is,
-     * így le lesz zárva biztosan.
-     * Ezzel valamit kezdünk.
-     * Most jó lesz így.
-     */
-    /* Szállítási költségecske tárolása a memóriában */
 
     String szallitas = "";
     String nev = "";
     String mennyiseg = "";
     Scanner bekeres;
     Koltseg koltseg;
+    Filehandler file;
 
     public MainConsole() {
 
@@ -54,7 +47,7 @@ public class MainConsole {
 
     private void koltsegMentes() {
         koltseg = new Koltseg(szallitas, nev, mennyiseg);
-        Filehandler file = new Filehandler();
+        file = new Filehandler();
         file.iras(koltseg);
     }
 }
