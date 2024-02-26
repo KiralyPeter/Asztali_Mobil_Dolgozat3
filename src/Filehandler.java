@@ -3,42 +3,38 @@
  * Copyright (c) 2024, Sallai András
  * Licenc: MIT
  * Refakotárlás esetén jelölje meg, ki, mikor.
+ * Refaktorálva: 2024-02-26, Király Péter
  */
 
-// A fájl writer import
 import java.io.FileWriter;
 import java.io.IOException;
-// A print wirter import:
 import java.io.PrintWriter;
 
-
-/*
- * A fájkezelő osztály
- */
 public class Filehandler {
-    /* Az i() metódus kiírja a 
-    kapott költségeket fájlba.
-    */
-    public void i(Koltseg k) {
-        //Próba, hogy lefut-e.
+
+    public void iras(Koltseg koltseg) {
+
         try {
-            FileWriter fw = new FileWriter("adat.txt", true);
-            fw.write(k.szallitas.toString());
-            fw.write(":");
-            fw.write(k.uzlet.toString());
-            fw.write(":");
-            fw.write(k.javitas.toString());
-            fw.write("\n");
-            fw.close();
-            
+            FileWriter fajl = new FileWriter("adat.txt", true);
+            fajl.write(koltseg.szallitas.toString());
+            fajl.write(":");
+            fajl.write(koltseg.uzlet.toString());
+            fajl.write(":");
+            fajl.write(koltseg.javitas.toString());
+            fajl.write("\n");
+            fajl.close();
+
         } catch (IOException e) {
-            // TODO: handle exception
-        }//A cath ág vége
-    }// Az i változó vége
+            System.err.println("Hiba a fájl írása közben...");
+            System.err.println(e.getMessage());
+        }
+
+    }
+
     /*
      * Valahova lehetne tenni egy adatbázis-kezelő
      * részt is. Ugyanaz a lenne a metódus ami,
-     * kiírja a fájlba és kiírja adatbázisba. 
+     * kiírja a fájlba és kiírja adatbázisba.
      * Mármint a metódus neve lenne ugyanaz.
      * De lehetnek olyan általános osztály
      * ahol a konstruktor paraméterként kapná

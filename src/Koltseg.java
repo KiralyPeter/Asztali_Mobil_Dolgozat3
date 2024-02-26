@@ -3,14 +3,18 @@
  * Copyright (c) 2024, Sallai András
  * Licenc: MIT
  * Refakotárlás esetén jelölje meg, ki, mikor.
+ * Refaktorálva: 2024-02-26, Király Péter
  */
 
 public class Koltseg {
-Double szallitas;Double uzlet;Double javitas;
-public Koltseg(String szallitas, String uzlet, String javitas) {
-this.szallitas = Double.parseDouble(szallitas);
-this.uzlet = Double.parseDouble(uzlet);
-this.javitas = Double.parseDouble(javitas);
-}
-    
+    Double szallitas;
+    Double uzlet;
+    Double javitas;
+
+    public Koltseg(String szallitas, String uzlet, String javitas) {
+        this.szallitas = Double.parseDouble(szallitas);
+        this.uzlet = Double.parseDouble(uzlet);
+        this.javitas = Double.parseDouble(javitas);
+    }
+
 }
